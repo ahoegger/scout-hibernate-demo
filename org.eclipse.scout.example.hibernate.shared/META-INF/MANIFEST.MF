@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.eclipse.scout.example.hibernate.shared
+Bundle-SymbolicName: org.eclipse.scout.example.hibernate.shared;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.eclipse.scout.example.hibernate.shared.Activator
+Export-Package: org.eclipse.scout.example.hibernate.shared,
+ org.eclipse.scout.example.hibernate.shared.security,
+ org.eclipse.scout.example.hibernate.shared.services.common.text,
+ org.eclipse.scout.example.hibernate.shared.services.process
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.scout.rt.shared;visibility:=reexport
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy

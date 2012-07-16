@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Entity
+Bundle-SymbolicName: org.eclipse.scout.example.hibernate.entity
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.eclipse.scout.example.hibernate.entity.internal.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.scout.example.hibernate.lib;bundle-version="1.0.0"
+Bundle-ActivationPolicy: lazy
+Eclipse-RegisterBuddy: org.eclipse.scout.example.hibernate.lib
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.eclipse.scout.example.hibernate.entity

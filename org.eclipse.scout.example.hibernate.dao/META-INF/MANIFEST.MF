@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Dao
+Bundle-SymbolicName: org.eclipse.scout.example.hibernate.dao;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.eclipse.scout.example.hibernate.dao.internal.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.scout.example.hibernate.server;bundle-version="1.0.0",
+ org.eclipse.scout.example.hibernate.entity;bundle-version="1.0.0",
+ org.eclipse.scout.example.hibernate.lib;bundle-version="1.0.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
