@@ -1,6 +1,5 @@
 package org.eclipse.scout.example.hibernate.client.ui.forms;
 
-import org.eclipse.scout.commons.annotations.ConfigOperation;
 import org.eclipse.scout.commons.annotations.FormData;
 import org.eclipse.scout.commons.annotations.FormData.SdkCommand;
 import org.eclipse.scout.commons.annotations.Order;
@@ -76,6 +75,11 @@ public class DesktopForm extends AbstractForm {
           return getColumnSet().getColumnByClass(PrenameColumn.class);
         }
 
+        @Override
+        protected String getConfiguredDefaultIconId() {
+          return org.eclipse.scout.example.hibernate.shared.Icons.Eye;
+        }
+
         public IdColumn getIdColumn() {
           return getColumnSet().getColumnByClass(IdColumn.class);
         }
@@ -101,6 +105,11 @@ public class DesktopForm extends AbstractForm {
           protected String getConfiguredHeaderText() {
             return TEXTS.get("Name");
           }
+
+          @Override
+          protected int getConfiguredWidth() {
+            return 200;
+          }
         }
 
         @Order(30.0)
@@ -109,6 +118,11 @@ public class DesktopForm extends AbstractForm {
           @Override
           protected String getConfiguredHeaderText() {
             return TEXTS.get("Prename");
+          }
+
+          @Override
+          protected int getConfiguredWidth() {
+            return 200;
           }
         }
 

@@ -10,18 +10,15 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "PERSON")
+@SequenceGenerator(name = "ExampleSequence", sequenceName = "EXAMPLE_SQ")
 public class Person {
-  @Id
-  @SequenceGenerator(name = "ExampleSequence", sequenceName = "EXAMPLE_SQ", allocationSize = 1)
-  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ExampleSequence")
-  @Column(name = "ID")
   private Long id;
-
-  @Column(name = "NAME")
   private String m_name;
-  @Column(name = "PRENAME")
   private String m_prename;
 
+  @Id
+  @Column(name = "ID")
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ExampleSequence")
   public Long getId() {
     return id;
   }
@@ -30,6 +27,7 @@ public class Person {
     this.id = id;
   }
 
+  @Column(name = "NAME")
   public String getName() {
     return m_name;
   }
@@ -38,6 +36,7 @@ public class Person {
     m_name = name;
   }
 
+  @Column(name = "PRENAME")
   public String getPrename() {
     return m_prename;
   }

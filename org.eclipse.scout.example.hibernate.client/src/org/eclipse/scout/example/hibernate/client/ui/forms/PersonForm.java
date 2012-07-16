@@ -5,10 +5,11 @@ import org.eclipse.scout.commons.annotations.FormData.SdkCommand;
 import org.eclipse.scout.commons.annotations.Order;
 import org.eclipse.scout.commons.exception.ProcessingException;
 import org.eclipse.scout.example.hibernate.client.ui.forms.PersonForm.MainBox.CancelButton;
+import org.eclipse.scout.example.hibernate.client.ui.forms.PersonForm.MainBox.DebugBox;
+import org.eclipse.scout.example.hibernate.client.ui.forms.PersonForm.MainBox.DebugBox.ThrowExceptionField;
 import org.eclipse.scout.example.hibernate.client.ui.forms.PersonForm.MainBox.NameField;
 import org.eclipse.scout.example.hibernate.client.ui.forms.PersonForm.MainBox.OkButton;
 import org.eclipse.scout.example.hibernate.client.ui.forms.PersonForm.MainBox.PrenameField;
-import org.eclipse.scout.example.hibernate.client.ui.forms.PersonForm.MainBox.ThrowExceptionField;
 import org.eclipse.scout.example.hibernate.shared.security.UpdatePersonPermission;
 import org.eclipse.scout.example.hibernate.shared.services.process.IPersonProcessService;
 import org.eclipse.scout.example.hibernate.shared.services.process.PersonFormData;
@@ -58,6 +59,10 @@ public class PersonForm extends AbstractForm {
     startInternal(new NewHandler());
   }
 
+  public DebugBox getDebugBox() {
+    return getFieldByClass(DebugBox.class);
+  }
+
   public MainBox getMainBox() {
     return getFieldByClass(MainBox.class);
   }
@@ -99,20 +104,29 @@ public class PersonForm extends AbstractForm {
       }
     }
 
-    @Order(30.0)
-    public class ThrowExceptionField extends AbstractBooleanField {
+    @Order(40.0)
+    public class DebugBox extends AbstractGroupBox {
 
       @Override
       protected String getConfiguredLabel() {
-        return TEXTS.get("ThrowException");
+        return TEXTS.get("Debug");
+      }
+
+      @Order(10.0)
+      public class ThrowExceptionField extends AbstractBooleanField {
+
+        @Override
+        protected String getConfiguredLabel() {
+          return TEXTS.get("ThrowException");
+        }
       }
     }
 
-    @Order(40.0)
+    @Order(50.0)
     public class OkButton extends AbstractOkButton {
     }
 
-    @Order(50.0)
+    @Order(60.0)
     public class CancelButton extends AbstractCancelButton {
     }
   }
